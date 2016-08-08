@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/init.css">
+	<style type="text/css" media="screen">
+		div{
+			width: 50px;
+			height: 50px;
+			background: red;
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var str;
+		for (var i = 0; i < 9; i++) {
+			str+='<div>'+i+'</div>';	
+		}
+		document.body.innerHTML=str;
+		var divs=document.getElementsByTagName('div');
+		var left=0;
+		var top=0;
+		for (var i = 0; i < divs.length; i++) {
+			left+=50;
+			top+=50;
+			divs[i].style.left=left+'px';
+			divs[i].style.top=top+'px';
+		}
+		
+	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		button{
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		ul{
+			position: relative;
+		}
+		li{
+			list-style: none;
+			position: absolute;
+			width: 50px;
+			line-height: 50px;
+			background: red;
+			text-align: center;
+			display: none;
+		}
+	</style>
+	<script  type="text/javascript" charset="utf-8">
+		window.onload=function(){
+			var button=document.getElementsByTagName('button')[0];
+			var ul=document.getElementsByTagName('ul')[0];
+			var li=document.getElementsByTagName('li');
+			var now=0;
+			
+			for(var i=0;i<5;i++){
+				ul.innerHTML+='<li>'+i+'</li>';
+			}
+			button.onclick=function(){
+				console.log(now);
+			if(now%4==0){
+				var left1=0;
+				var top1=0;
+				for (var i = 0; i <5; i++) {
+					left1+=50;
+					if(i<=2){
+						top1+=50;
+					}
+					else{
+						top1-=50;
+					}
+					li[i].style.left=left1+'px';
+					li[i].style.top=top1+'px';
+					li[i].style.display='block';
+				}
+			}
+			else if(now%4==1){
+				var left1=0;
+				var top1=0;
+				for (var i = 0; i <5; i++) {
+					top1+=50;
+					if(i<=2){
+						left1+=50;
+					}
+					else{
+						left1-=50;
+					}
+					li[i].style.left=left1+'px';
+					li[i].style.top=top1+'px';
+					li[i].style.display='block';
+				}
+			}
+			else if(now%4==2){
+				var left1=400;
+				var top1=0;
+				for (var i = 0; i <5; i++) {
+					top1+=50;
+					if(i<=2){
+						left1-=50;
+					}
+					else{
+						left1+=50;
+					}
+					li[i].style.left=left1+'px';
+					li[i].style.top=top1+'px';
+					li[i].style.display='block';
+				}
+			}
+			else if(now%4==3){
+				var left1=0;
+				var top1=400;
+				for (var i = 0; i <5; i++) {
+					left1+=50;
+					if(i<=2){
+						top1-=50;
+					}
+					else{
+						top1+=50;
+					}
+					li[i].style.left=left1+'px';
+					li[i].style.top=top1+'px';
+					li[i].style.display='block';
+				}
+			}
+			now++;
+		}
+		}
+	</script>
+</head>
+<body>
+	<button>按钮</button>
+	<ul>
+		
+	</ul>
+</body>
+</html>

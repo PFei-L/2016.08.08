@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/init.css">
+	<style type="text/css" media="screen">
+		.box{
+		width: 500px;
+		height: 500px;
+		position: relative;
+		}
+		img{
+			width: 500px;
+			height: 500px;
+		}
+		.m{
+			width: 50px;
+			height: 50px;
+			background: #e4e4e4;
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var box=document.getElementsByClassName('box')[0];
+			var img=document.getElementsByTagName('img')[0];
+			var m=document.getElementsByClassName('m');
+			var left1=0;
+			var top1=0;
+			for (var i = 0; i < 100; i++) {
+				box.innerHTML+='<div class="m"></div>';
+				left1+=50;
+				top1=parseInt(i/10)*50;
+				if(i%10==0){
+					left1=0;
+				}
+				m[i].style.left=left1+'px';
+				m[i].style.top=top1+'px';
+				
+			}
+			for (var i = 0; i < m.length; i++) {
+				m[i].onmouseenter=function(){	
+				this.style.display='none';
+				}
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<img src="image/1.jpg">
+	</div>
+</body>
+</html>

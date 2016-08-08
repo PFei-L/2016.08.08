@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	
+	<style media="screen">
+	*{
+		margin: 0;
+		padding:0;
+	}
+		ul{
+			border: 1px solid #ededed;
+			list-style: none;
+		}
+		li{
+			width: 50px;
+			float: left;
+		/*	margin-left: 10px;*/
+			line-height:50px;
+    		text-align: center;
+     		color:#ffffff;
+
+		}
+		.clear:after{
+			content:'';
+			display:block;
+			clear: both;
+		}
+		.red{
+			background: red;
+		}
+		.yellow{
+			background: yellow;
+		}
+		.blue{
+			background: blue;
+		}
+		.green{
+			background: green;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ul=document.getElementsByTagName("ul")[0];
+			var button=document.getElementsByTagName('button')[0];
+			
+			button.onclick=function(){
+				var str="";
+				for (var i=0;i<10;i++) {
+					if(i%4==0){
+						str+="<li class='red'>"+i+"</li>";
+					}
+					else if(i%4==1){
+						str+="<li class='yellow'>"+i+"</li>";
+					}
+					else if(i%4==2){
+						str+="<li class='blue'>"+i+"</li>";
+					}
+					else if(i%4==3){
+						str+="<li class='green'>"+i+"</li>";
+					}
+					
+				}
+				
+				ul.innerHTML=str;
+			}
+		}
+	</script>
+</head>
+<body>
+<button>自动生成10个li</button>
+<ul class="clear">
+	
+
+</ul>
+	
+</body>
+</html>
